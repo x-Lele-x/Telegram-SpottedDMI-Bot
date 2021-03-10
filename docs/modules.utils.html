@@ -93,7 +93,6 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Utils modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#module-modules.utils.info_util">info_util</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-modules.utils.keyboard_util">keyboard_util</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-modules.utils.post_util">post_util</a></li>
 </ul>
 </li>
 </ul>
@@ -174,27 +173,81 @@
 <div class="section" id="module-modules.utils.info_util">
 <span id="info-util"></span><h2>info_util<a class="headerlink" href="#module-modules.utils.info_util" title="Permalink to this headline">¶</a></h2>
 <p>Common info needed in both command and callback handlers</p>
-<dl class="py function">
-<dt id="modules.utils.info_util.check_message_type">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.info_util.</span></code><code class="sig-name descname"><span class="pre">check_message_type</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.message.Message</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#modules.utils.info_util.check_message_type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check that the type of the message is one of the ones supported</p>
+<dl class="py class">
+<dt id="modules.utils.info_util.EventInfo">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">modules.utils.info_util.</span></code><code class="sig-name descname"><span class="pre">EventInfo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.bot.Bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.update.Update</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.message.Message</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.callbackquery.CallbackQuery</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class that contains all the relevant information related to an event</p>
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.answer_callback_query">
+<code class="sig-name descname"><span class="pre">answer_callback_query</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.answer_callback_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the answer_callback_query method of the bot class, while also handling the exception</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>message</strong> (<em>Message</em>) – message to check</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>whether its type is supported or not</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em><em>, </em><em>optional</em>) – Text to show to the user. Defaults to None.</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt id="modules.utils.info_util.get_callback_info">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.info_util.</span></code><code class="sig-name descname"><span class="pre">get_callback_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.update.Update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#modules.utils.info_util.get_callback_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the classic info from the update and context parameters for callbacks</p>
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.bot">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bot</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.bot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Istance of the telegram bot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">telegram.Bot</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.bot_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bot_data</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.bot_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data related to the bot. Is not persistent between restarts</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.chat_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">chat_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.chat_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Id of the chat where the event happened. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.chat_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">chat_type</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.chat_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of the chat where the event happened. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.context">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">context</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Context generated by some event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">telegram.ext.CallbackContext</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.from_callback">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_callback</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.update.Update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Istance of EventInfo created by a callback update</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -203,35 +256,35 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>{bot, bot_data, message, chat_id, text, query_id, data, message_id, sender_id, sender_username, reply_markup, user_data}</p>
+<dd class="field-even"><p>istance of the class</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference internal" href="#modules.utils.info_util.EventInfo" title="modules.utils.info_util.EventInfo">EventInfo</a></p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt id="modules.utils.info_util.get_job_info">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.info_util.</span></code><code class="sig-name descname"><span class="pre">get_job_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#modules.utils.info_util.get_job_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the classic info from the context parameter for jobs</p>
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.from_job">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_job</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Istance of EventInfo created by a job update</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>context</strong> (<em>CallbackContext</em>) – context passed by the handler</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>{bot}</p>
+<dd class="field-even"><p>istance of the class</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference internal" href="#modules.utils.info_util.EventInfo" title="modules.utils.info_util.EventInfo">EventInfo</a></p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt id="modules.utils.info_util.get_message_info">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.info_util.</span></code><code class="sig-name descname"><span class="pre">get_message_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.update.Update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#modules.utils.info_util.get_message_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the classic info from the update and context parameters for commands and messages</p>
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.from_message">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.update.Update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Istance of EventInfo created by a message update</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -240,12 +293,189 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>{bot, chat_id, text, message_id, sender_id}</p>
+<dd class="field-even"><p>istance of the class</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><a class="reference internal" href="#modules.utils.info_util.EventInfo" title="modules.utils.info_util.EventInfo">EventInfo</a></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.get_user_sign">
+<code class="sig-name descname"><span class="pre">get_user_sign</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.get_user_sign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a sign for the user. It will be a random name for an anonym user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_id</strong> (<em>int</em>) – id of the user that originated the post</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the sign of the user</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.is_private_chat">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_private_chat</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.is_private_chat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the chat is private or not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.is_valid_message_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_valid_message_type</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.is_valid_message_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether or not the type of the message is supported</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.message">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">message</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Message that caused the update. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">telegram.Message</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.message_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">message_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.message_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Id of the message that caused the update. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.query_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">query_data</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.query_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data associated with the query that caused the update. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.query_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">query_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.query_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Id of the query that caused the update. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.reply_markup">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">reply_markup</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.reply_markup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reply_markup of the message that caused the update. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">telegram.ReplyMarkup</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.send_post_to_admins">
+<code class="sig-name descname"><span class="pre">send_post_to_admins</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.send_post_to_admins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends the post to the admin group, so it can be approved</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>whether or not the operation was successful</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.send_post_to_channel">
+<code class="sig-name descname"><span class="pre">send_post_to_channel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.send_post_to_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends the post to  the channel, so it can be ejoyed by the users (and voted, if comments are disabled)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.send_post_to_channel_group">
+<code class="sig-name descname"><span class="pre">send_post_to_channel_group</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.send_post_to_channel_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends the post to the group associated to the channel, so that users can vote the post (if comments are enabled)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.text">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">text</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Text of the message that caused the update. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.update">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">update</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update generated by some event. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">telegram.update.Update</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.user_data">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_data</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data related to the user. Is not persistent between restarts</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.user_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Id of the user that caused the update. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.user_username">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_username</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Username of the user that caused the update. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -361,88 +591,6 @@ Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>InlineKeyboardMarkup</p>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-<div class="section" id="module-modules.utils.post_util">
-<span id="post-util"></span><h2>post_util<a class="headerlink" href="#module-modules.utils.post_util" title="Permalink to this headline">¶</a></h2>
-<p>Modules that handles how the post shall be sent according to the chat (adming group or channel)</p>
-<dl class="py function">
-<dt id="modules.utils.post_util.anonym_name">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.post_util.</span></code><code class="sig-name descname"><span class="pre">anonym_name</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#modules.utils.post_util.anonym_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generates a random name for an anonym user</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a name among the ones proposed</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="modules.utils.post_util.send_helper_message">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.post_util.</span></code><code class="sig-name descname"><span class="pre">send_helper_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chat_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reply_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.bot.Bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reply_markup</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.message.Message</span><a class="headerlink" href="#modules.utils.post_util.send_helper_message" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sends an helper message to show the author of the post, and to vote on the post if comments are enabled</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>user_id</strong> (<em>int</em>) – id of the user that originated the post</p></li>
-<li><p><strong>chat_id</strong> (<em>int</em>) – id of the chat to which send the helper message</p></li>
-<li><p><strong>reply_message_id</strong> (<em>int</em>) – id of the message the helper message will reply to</p></li>
-<li><p><strong>bot</strong> (<em>Bot</em>) – bot</p></li>
-<li><p><strong>reply_markup</strong> (<em>InlineKeyboardMarkup</em><em>, </em><em>optional</em>) – voting Inline Keyboard. Defaults to None.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>helper message</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Message</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="modules.utils.post_util.send_post_to">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.post_util.</span></code><code class="sig-name descname"><span class="pre">send_post_to</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.message.Message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.bot.Bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.message.Message</span><a class="headerlink" href="#modules.utils.post_util.send_post_to" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sends the post to the specified destination:</p>
-<p>admin -&gt; to the admin group, so it can be approved</p>
-<p>channel -&gt; to the channel, so it can be ejoyed by the users (and voted, if comments are disabled)</p>
-<p>channel_group -&gt; to the group associated to the channel, so that users can vote the post (if comments are enabled)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>message</strong> (<em>Message</em>) – message that contains the post to send</p></li>
-<li><p><strong>bot</strong> (<em>Bot</em>) – bot</p></li>
-<li><p><strong>destination</strong> (<em>str</em>) – destination of the message (admin | channel | channel_group)</p></li>
-<li><p><strong>user_id</strong> (<em>int</em><em>, </em><em>optional</em>) – id of the user that originated the post. Defaults to None.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>message used to send a post to a specific destination</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>Message</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="modules.utils.post_util.show_admins_votes">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.post_util.</span></code><code class="sig-name descname"><span class="pre">show_admins_votes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pending_post</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="modules.data.html#modules.data.pending_post.PendingPost" title="modules.data.pending_post.PendingPost"><span class="pre">modules.data.pending_post.PendingPost</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">bot</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.bot.Bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approve</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.post_util.show_admins_votes" title="Permalink to this definition">¶</a></dt>
-<dd><p>After a post is been approved or rejected, shows the admins that aproved or rejected it         and edit the message to delete the reply_markup</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>chat_id</strong> (<em>int</em>) – id of the admin group</p></li>
-<li><p><strong>message_id</strong> (<em>int</em>) – id of the post in question in the group</p></li>
-<li><p><strong>bot</strong> (<em>Bot</em>) – bot</p></li>
-<li><p><strong>approve</strong> (<em>bool</em>) – whether the vote is approve or reject</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>

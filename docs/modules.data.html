@@ -384,15 +384,27 @@ Should not be used to select something</p>
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">modules.data.pending_post.</span></code><code class="sig-name descname"><span class="pre">PendingPost</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.pending_post.PendingPost" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class that represents a pending post</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the user that sent the post</p></li>
+<li><p><strong>u_message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the original message of the post</p></li>
+<li><p><strong>group_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the admin group</p></li>
+<li><p><strong>g_message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the post in the group</p></li>
+<li><p><strong>date</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>) – when the post was sent</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt id="modules.data.pending_post.PendingPost.create">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.message.Message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.message.Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.pending_post.PendingPost.create" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.message.Message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.pending_post.PendingPost.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new post and inserts it in the table of pending posts</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>user_message</strong> (<em>Message</em>) – message sent by the user that contains the post</p></li>
-<li><p><strong>admin_message</strong> (<em>Message</em>) – message received in the admin group that references the post</p></li>
+<li><p><strong>g_message_id</strong> (<em>int</em>) – id of the post in the group</p></li>
+<li><p><strong>group_id</strong> (<em>int</em>) – id of the admin group</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -412,13 +424,13 @@ Should not be used to select something</p>
 
 <dl class="py method">
 <dt id="modules.data.pending_post.PendingPost.from_group">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.pending_post.PendingPost.from_group" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.pending_post.PendingPost.from_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves a pending post from the info related to the admin group</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>group_id</strong> (<em>int</em>) – id of the admin group</p></li>
 <li><p><strong>g_message_id</strong> (<em>int</em>) – id of the post in the group</p></li>
+<li><p><strong>group_id</strong> (<em>int</em>) – id of the admin group</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -503,23 +515,6 @@ If before is specified, returns only the one sent before that timestamp</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="modules.data.pending_post.PendingPost.is_pending">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">is_pending</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#modules.data.pending_post.PendingPost.is_pending" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the user still has a post pending</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>user_id</strong> (<em>int</em>) – id of the user to check</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>whether the user still has a post pending or not</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt id="modules.data.pending_post.PendingPost.set_admin_vote">
 <code class="sig-name descname"><span class="pre">set_admin_vote</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">admin_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#modules.data.pending_post.PendingPost.set_admin_vote" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds the vote of the admin on a specific post, or update the existing vote, if needed</p>
@@ -535,6 +530,20 @@ If before is specified, returns only the one sent before that timestamp</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.data.pending_post.PendingPost.show_admins_votes">
+<code class="sig-name descname"><span class="pre">show_admins_votes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.bot.Bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approve</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.pending_post.PendingPost.show_admins_votes" title="Permalink to this definition">¶</a></dt>
+<dd><p>After a post is been approved or rejected, shows the admins that aproved or rejected it             and edit the message to delete the reply_markup</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bot</strong> (<em>Bot</em>) – bot</p></li>
+<li><p><strong>approve</strong> (<em>bool</em>) – whether the vote is approve or reject</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -626,13 +635,24 @@ If before is specified, returns only the one sent before that timestamp</p>
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">modules.data.published_post.</span></code><code class="sig-name descname"><span class="pre">PublishedPost</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.published_post.PublishedPost" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class that represents a published post</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the channel</p></li>
+<li><p><strong>c_message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the post in the channel</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt id="modules.data.published_post.PublishedPost.create">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel_message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.message.Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.published_post.PublishedPost.create" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.published_post.PublishedPost.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inserts a new post in the table of published posts</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>channel_message</strong> (<em>Message</em>) – message ready to be published</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>channel_id</strong> (<em>int</em>) – id of the channel</p></li>
+<li><p><strong>c_message_id</strong> (<em>int</em>) – id of the post in the channel</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>istance of the class</p>
@@ -711,6 +731,19 @@ If before is specified, returns only the one sent before that timestamp</p>
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">modules.data.report.</span></code><code class="sig-name descname"><span class="pre">Report</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_username</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.datetime</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.report.Report" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class that represents a report</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the user that reported</p></li>
+<li><p><strong>group_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the admin group</p></li>
+<li><p><strong>g_message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the post in the group</p></li>
+<li><p><strong>channel_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the channel</p></li>
+<li><p><strong>c_message_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the post in question in the channel</p></li>
+<li><p><strong>target_username</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – username of the reported user</p></li>
+<li><p><strong>date</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>) – when the report happened</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt id="modules.data.report.Report.create_post_report">
 <em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create_post_report</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.message.Message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.report.Report.create_post_report" title="Permalink to this definition">¶</a></dt>
@@ -719,8 +752,8 @@ If before is specified, returns only the one sent before that timestamp</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>user_id</strong> (<em>int</em>) – id of the user that reported</p></li>
-<li><p><strong>c_message_id</strong> (<em>int</em>) – id of the channel</p></li>
-<li><p><strong>c_message_id</strong> – id of the post in question in the channel</p></li>
+<li><p><strong>channel_id</strong> (<em>int</em>) – id of the channel</p></li>
+<li><p><strong>c_message_id</strong> (<em>int</em>) – id of the post in question in the channel</p></li>
 <li><p><strong>admin_message</strong> (<em>Message</em>) – message received in the admin group that references the report</p></li>
 </ul>
 </dd>
@@ -799,8 +832,8 @@ If before is specified, returns only the one sent before that timestamp</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>user_id</strong> (<em>int</em>) – id of the user that reported</p></li>
-<li><p><strong>c_message_id</strong> (<em>int</em>) – id of the channel</p></li>
-<li><p><strong>c_message_id</strong> – id of the post in question in the channel</p></li>
+<li><p><strong>channel_id</strong> (<em>int</em>) – id of the channel</p></li>
+<li><p><strong>c_message_id</strong> (<em>int</em>) – id of the post in question in the channel</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -815,13 +848,10 @@ If before is specified, returns only the one sent before that timestamp</p>
 <dl class="py method">
 <dt id="modules.data.report.Report.minutes_passed">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">minutes_passed</span></code><a class="headerlink" href="#modules.data.report.Report.minutes_passed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates the ammount of minutes elapsed from when the report was submitted, if applicable</p>
+<dd><p>Ammount of minutes elapsed from when the report was submitted, if applicable</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>how many minutes have enlapsed, if applicable, -1 otherwise</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -837,6 +867,11 @@ If before is specified, returns only the one sent before that timestamp</p>
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">modules.data.user.</span></code><code class="sig-name descname"><span class="pre">User</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.user.User" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class that represents a user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – id of the user</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt id="modules.data.user.User.ban">
 <code class="sig-name descname"><span class="pre">ban</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.user.User.ban" title="Permalink to this definition">¶</a></dt>
@@ -874,13 +909,10 @@ If before is specified, returns only the one sent before that timestamp</p>
 <dl class="py method">
 <dt id="modules.data.user.User.is_banned">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_banned</span></code><a class="headerlink" href="#modules.data.user.User.is_banned" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the user is banned or not</p>
+<dd><p>If the user is banned or not</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>whether the user is banned or not</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -888,13 +920,10 @@ If before is specified, returns only the one sent before that timestamp</p>
 <dl class="py method">
 <dt id="modules.data.user.User.is_credited">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_credited</span></code><a class="headerlink" href="#modules.data.user.User.is_credited" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the user is in the credited list</p>
+<dd><p>If the user is in the credited list</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>whether the user is to be credited or not</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -902,13 +931,10 @@ If before is specified, returns only the one sent before that timestamp</p>
 <dl class="py method">
 <dt id="modules.data.user.User.is_pending">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_pending</span></code><a class="headerlink" href="#modules.data.user.User.is_pending" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks if the user has a post already pending or not</p>
+<dd><p>If the user has a post already pending or not</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>whether the user has a post already pending or not</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
