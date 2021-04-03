@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Data modules &mdash; Spotted dmi bot  documentation</title>
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">All modules</a><ul class="current">
@@ -177,11 +178,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-modules">
+  <section id="data-modules">
 <h1>Data modules<a class="headerlink" href="#data-modules" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description</strong></p>
 <span class="target" id="module-modules.data"></span><p>Modules that work with the data section</p>
-<div class="section" id="module-modules.data.data_reader">
+<section id="module-modules.data.data_reader">
 <span id="data-reader"></span><h2>data_reader<a class="headerlink" href="#module-modules.data.data_reader" title="Permalink to this headline">¶</a></h2>
 <p>Read data from files</p>
 <dl class="py function">
@@ -221,7 +222,13 @@
 <dl class="py function">
 <dt id="modules.data.data_reader.read_md">
 <code class="sig-prename descclassname"><span class="pre">modules.data.data_reader.</span></code><code class="sig-name descname"><span class="pre">read_md</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#modules.data.data_reader.read_md" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read the contens of a markdown file. The path is data/markdown</p>
+<dd><p>Read the contens of a markdown file.
+The path is data/markdown.
+It also will replace the following parts of the text:</p>
+<ul class="simple">
+<li><p>{channel_tag} -&gt; config_map[‘meme’][‘channel_tag’]</p></li>
+<li><p>{bot_tag} -&gt; config_map[‘bot_tag’]</p></li>
+</ul>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>file_name</strong> (<em>str</em>) – name of the file</p>
@@ -235,8 +242,8 @@
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-modules.data.db_manager">
+</section>
+<section id="module-modules.data.db_manager">
 <span id="db-manager"></span><h2>db_manager<a class="headerlink" href="#module-modules.data.db_manager" title="Permalink to this headline">¶</a></h2>
 <p>Handles the management of databases</p>
 <dl class="py class">
@@ -246,8 +253,9 @@
 <p>Class that handles the management of databases</p>
 <dl class="py method">
 <dt id="modules.data.db_manager.DbManager.count_from">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">count_from</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#modules.data.db_manager.DbManager.count_from" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the number of rows from SELECT COUNT(*) FROM table_name WHERE where</p>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">count_from</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="headerlink" href="#modules.data.db_manager.DbManager.count_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of rows found with the query.
+Executes “SELECT COUNT(select) FROM table_name [WHERE where (with where_args)]”</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -268,9 +276,9 @@
 
 <dl class="py method">
 <dt id="modules.data.db_manager.DbManager.delete_from">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">delete_from</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.db_manager.DbManager.delete_from" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes the rows from the specified table, where the condition, when set, is satisfied
-Execute “DELETE FROM table_name [WHERE where (with where_args)]”</p>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">delete_from</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.db_manager.DbManager.delete_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the rows from the specified table, where the condition, when set, is satisfied.
+Executes “DELETE FROM table_name [WHERE where (with where_args)]”</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -284,7 +292,7 @@ Execute “DELETE FROM table_name [WHERE where (with where_args)]”</p>
 
 <dl class="py method">
 <dt id="modules.data.db_manager.DbManager.get_db">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_db</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sqlite3.Connection</span><span class="p"><span class="pre">,</span> </span><span class="pre">sqlite3.Cursor</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#modules.data.db_manager.DbManager.get_db" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">get_db</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sqlite3.Connection</span><span class="p"><span class="pre">,</span> </span><span class="pre">sqlite3.Cursor</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#modules.data.db_manager.DbManager.get_db" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the connection to the database. It can be sqlite or postgres</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -298,14 +306,16 @@ Execute “DELETE FROM table_name [WHERE where (with where_args)]”</p>
 
 <dl class="py method">
 <dt id="modules.data.db_manager.DbManager.insert_into">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">insert_into</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.db_manager.DbManager.insert_into" title="Permalink to this definition">¶</a></dt>
-<dd><p>Inserts the specified values in the database</p>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">insert_into</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">tuple</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiple_rows</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.db_manager.DbManager.insert_into" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts the specified values in the database.
+Executes “INSERT INTO table_name ([columns]) VALUES (placeholders)”</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>table_name</strong> (<em>str</em>) – name of the table used in the INSERT INTO</p></li>
-<li><p><strong>values</strong> (<em>tuple</em>) – values to be inserted</p></li>
+<li><p><strong>values</strong> (<em>tuple</em>) – values to be inserted. If multiple_rows is true, tuple of tuples of values to be inserted</p></li>
 <li><p><strong>columns</strong> (<em>tuple</em><em>, </em><em>optional</em>) – columns that will be inserted, as a tuple of strings. Defaults to None.</p></li>
+<li><p><strong>multiple_rows</strong> (<em>bool</em>) – whether or not multiple rows will be inserted at the same time</p></li>
 </ul>
 </dd>
 </dl>
@@ -313,7 +323,7 @@ Execute “DELETE FROM table_name [WHERE where (with where_args)]”</p>
 
 <dl class="py method">
 <dt id="modules.data.db_manager.DbManager.query_from_file">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">query_from_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.db_manager.DbManager.query_from_file" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">query_from_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.db_manager.DbManager.query_from_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Commits all the queries in the specified file. The queries must be separated by a —– string
 Should not be used to select something</p>
 <dl class="field-list simple">
@@ -325,7 +335,7 @@ Should not be used to select something</p>
 
 <dl class="py method">
 <dt id="modules.data.db_manager.DbManager.query_from_string">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">query_from_string</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">queries</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.db_manager.DbManager.query_from_string" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">query_from_string</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">queries</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.db_manager.DbManager.query_from_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Commits all the queries in the string
 Should not be used to select something</p>
 <dl class="field-list simple">
@@ -336,9 +346,15 @@ Should not be used to select something</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="modules.data.db_manager.DbManager.row_factory">
+<code class="sig-name descname"><span class="pre">row_factory</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.data.db_manager.DbManager.row_factory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="modules.data.db_manager.DbManager.select_from">
-<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">select_from</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#modules.data.db_manager.DbManager.select_from" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the result of a SELECT select FROM table_name [WHERE where (with where_args)]</p>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">select_from</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">list</span><a class="headerlink" href="#modules.data.db_manager.DbManager.select_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the results of a query.
+Executes “SELECT select FROM table_name [WHERE where (with where_args)] [GROUP_BY group_by] [ORDER BY order_by]”</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -346,6 +362,7 @@ Should not be used to select something</p>
 <li><p><strong>select</strong> (<em>str</em><em>, </em><em>optional</em>) – columns considered for the query. Defaults to “*”.</p></li>
 <li><p><strong>where</strong> (<em>str</em><em>, </em><em>optional</em>) – where clause, with %s placeholders for the where_args. Defaults to “”.</p></li>
 <li><p><strong>where_args</strong> (<em>tuple</em><em>, </em><em>optional</em>) – args used in the where clause. Defaults to None.</p></li>
+<li><p><strong>group_by</strong> (<em>str</em><em>, </em><em>optional</em>) – group by clause. Defaults to “”.</p></li>
 <li><p><strong>order_by</strong> (<em>str</em><em>, </em><em>optional</em>) – order by clause. Defaults to “”.</p></li>
 </ul>
 </dd>
@@ -360,28 +377,8 @@ Should not be used to select something</p>
 
 </dd></dl>
 
-<dl class="py function">
-<dt id="modules.data.db_manager.dict_factory">
-<code class="sig-prename descclassname"><span class="pre">modules.data.db_manager.</span></code><code class="sig-name descname"><span class="pre">dict_factory</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cursor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">sqlite3.Cursor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">sqlite3.Row</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">dict</span><a class="headerlink" href="#modules.data.db_manager.dict_factory" title="Permalink to this definition">¶</a></dt>
-<dd><p>Makes so that the cursor is a list of dictionaries with column names as keys</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>cursor</strong> (<em>sqlite3.Cursor</em>) – cursor generated by the database</p></li>
-<li><p><strong>row</strong> (<em>sqlite3.Row</em>) – rows of the database</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>structure of the database used used by the cursor</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-<div class="section" id="module-modules.data.pending_post">
+</section>
+<section id="module-modules.data.pending_post">
 <span id="pending-post"></span><h2>pending_post<a class="headerlink" href="#module-modules.data.pending_post" title="Permalink to this headline">¶</a></h2>
 <p>Pending post management</p>
 <dl class="py class">
@@ -555,8 +552,8 @@ If before is specified, returns only the one sent before that timestamp</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-modules.data.post_data">
+</section>
+<section id="module-modules.data.post_data">
 <span id="post-data"></span><h2>post_data<a class="headerlink" href="#module-modules.data.post_data" title="Permalink to this headline">¶</a></h2>
 <p>Data management for the bot</p>
 <dl class="py class">
@@ -631,8 +628,8 @@ If before is specified, returns only the one sent before that timestamp</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-modules.data.published_post">
+</section>
+<section id="module-modules.data.published_post">
 <span id="published-post"></span><h2>published_post<a class="headerlink" href="#module-modules.data.published_post" title="Permalink to this headline">¶</a></h2>
 <p>Published post management</p>
 <dl class="py class">
@@ -727,8 +724,8 @@ If before is specified, returns only the one sent before that timestamp</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-modules.data.report">
+</section>
+<section id="module-modules.data.report">
 <span id="report"></span><h2>report<a class="headerlink" href="#module-modules.data.report" title="Permalink to this headline">¶</a></h2>
 <p>Reports management</p>
 <dl class="py class">
@@ -863,8 +860,8 @@ If before is specified, returns only the one sent before that timestamp</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-modules.data.user">
+</section>
+<section id="module-modules.data.user">
 <span id="user"></span><h2>user<a class="headerlink" href="#module-modules.data.user" title="Permalink to this headline">¶</a></h2>
 <p>Users management</p>
 <dl class="py class">
@@ -907,6 +904,23 @@ If before is specified, returns only the one sent before that timestamp</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.data.user.User.get_user_sign">
+<code class="sig-name descname"><span class="pre">get_user_sign</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.bot.Bot</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#modules.data.user.User.get_user_sign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a sign for the user. It will be a random name for an anonym user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bot</strong> (<em>Bot</em>) – telegram bot</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the sign of the user</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -960,8 +974,8 @@ If before is specified, returns only the one sent before that timestamp</p>
 
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

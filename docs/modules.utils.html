@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Utils modules &mdash; Spotted dmi bot  documentation</title>
@@ -88,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">All modules</a><ul class="current">
@@ -172,11 +173,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="utils-modules">
+  <section id="utils-modules">
 <h1>Utils modules<a class="headerlink" href="#utils-modules" title="Permalink to this headline">¶</a></h1>
 <p><strong>Description</strong></p>
 <span class="target" id="module-modules.utils"></span><p>Modules that provide various util</p>
-<div class="section" id="module-modules.utils.info_util">
+<section id="module-modules.utils.info_util">
 <span id="info-util"></span><h2>info_util<a class="headerlink" href="#module-modules.utils.info_util" title="Permalink to this headline">¶</a></h2>
 <p>Common info needed in both command and callback handlers</p>
 <dl class="py class">
@@ -251,6 +252,28 @@
 </dd></dl>
 
 <dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.forward_from_chat_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">forward_from_chat_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.forward_from_chat_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Id of the original chat the message has been forwarded from. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.forward_from_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">forward_from_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.forward_from_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Id of the original message that has been forwarded. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="modules.utils.info_util.EventInfo.from_callback">
 <em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_callback</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.update.Update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_callback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Istance of EventInfo created by a callback update</p>
@@ -303,23 +326,6 @@
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#modules.utils.info_util.EventInfo" title="modules.utils.info_util.EventInfo">EventInfo</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.get_user_sign">
-<code class="sig-name descname"><span class="pre">get_user_sign</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.get_user_sign" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generates a sign for the user. It will be a random name for an anonym user</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>user_id</strong> (<em>int</em>) – id of the user that originated the post</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>the sign of the user</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -472,6 +478,17 @@
 </dd></dl>
 
 <dl class="py method">
+<dt id="modules.utils.info_util.EventInfo.user_name">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_name</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the user that caused the update. Defaults to None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="modules.utils.info_util.EventInfo.user_username">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_username</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_username" title="Permalink to this definition">¶</a></dt>
 <dd><p>Username of the user that caused the update. Defaults to None</p>
@@ -484,8 +501,8 @@
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-modules.utils.keyboard_util">
+</section>
+<section id="module-modules.utils.keyboard_util">
 <span id="keyboard-util"></span><h2>keyboard_util<a class="headerlink" href="#module-modules.utils.keyboard_util" title="Permalink to this headline">¶</a></h2>
 <p>Creates the inlinekeyboard sent by the bot in its messages.
 Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
@@ -547,14 +564,17 @@ Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
 
 <dl class="py function">
 <dt id="modules.utils.keyboard_util.get_vote_kb">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></code><code class="sig-name descname"><span class="pre">get_vote_kb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_vote_kb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generates the InlineKeyboard for the published post</p>
+<code class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></code><code class="sig-name descname"><span class="pre">get_vote_kb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">published_post</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modules.data.html#modules.data.published_post.PublishedPost" title="modules.data.published_post.PublishedPost"><span class="pre">modules.data.published_post.PublishedPost</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_vote_kb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the InlineKeyboard for the published post and updates the correct number of reactions</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>new inline keyboard</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>published_post</strong> (<a class="reference internal" href="modules.data.html#modules.data.published_post.PublishedPost" title="modules.data.published_post.PublishedPost"><em>PublishedPost</em></a><em>, </em><em>optional</em>) – published post to which the keyboard is attached. Defaults to None</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>InlineKeyboardMarkup</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>new inline keyboard</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>InlineKeyboardMarkup</p>
 </dd>
 </dl>
 </dd></dl>
@@ -581,28 +601,8 @@ Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
 </dl>
 </dd></dl>
 
-<dl class="py function">
-<dt id="modules.utils.keyboard_util.update_vote_kb">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></code><code class="sig-name descname"><span class="pre">update_vote_kb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.inline.inlinekeyboardbutton.InlineKeyboardButton</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">published_post</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="modules.data.html#modules.data.published_post.PublishedPost" title="modules.data.published_post.PublishedPost"><span class="pre">modules.data.published_post.PublishedPost</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.update_vote_kb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates the InlineKeyboard when the valutation of a published post changes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>keyboard</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>InlineKeyboardButton</em><em>]</em><em>]</em>) – previous keyboard</p></li>
-<li><p><strong>published_post</strong> (<a class="reference internal" href="modules.data.html#modules.data.published_post.PublishedPost" title="modules.data.published_post.PublishedPost"><em>PublishedPost</em></a>) – published post to which the keyboard is attached</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>updated inline keyboard</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>InlineKeyboardMarkup</p>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
