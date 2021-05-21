@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/dark.css" type="text/css" />
 
   
@@ -30,6 +32,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -180,13 +183,13 @@
 <span id="info-util"></span><h2>info_util<a class="headerlink" href="#module-modules.utils.info_util" title="Permalink to this headline">¶</a></h2>
 <p>Common info needed in both command and callback handlers</p>
 <dl class="py class">
-<dt id="modules.utils.info_util.EventInfo">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">modules.utils.info_util.</span></code><code class="sig-name descname"><span class="pre">EventInfo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.bot.Bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.update.Update</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.message.Message</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.callbackquery.CallbackQuery</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">modules.utils.info_util.</span></span><span class="sig-name descname"><span class="pre">EventInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bot</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.bot.Bot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.update.Update</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.message.Message</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.callbackquery.CallbackQuery</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class that contains all the relevant information related to an event</p>
 <dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.answer_callback_query">
-<code class="sig-name descname"><span class="pre">answer_callback_query</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.answer_callback_query" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.answer_callback_query">
+<span class="sig-name descname"><span class="pre">answer_callback_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.answer_callback_query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls the answer_callback_query method of the bot class, while also handling the exception</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -195,9 +198,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.bot">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bot</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.bot" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.bot">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">bot</span></span><em class="property"><span class="pre">:</span> <span class="pre">telegram.bot.Bot</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.bot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Istance of the telegram bot</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -206,9 +209,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.bot_data">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">bot_data</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.bot_data" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.bot_data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">bot_data</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.bot_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Data related to the bot. Is not persistent between restarts</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -217,9 +220,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.chat_id">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">chat_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.chat_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.chat_id">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">chat_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.chat_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Id of the chat where the event happened. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -228,9 +231,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.chat_type">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">chat_type</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.chat_type" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.chat_type">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">chat_type</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.chat_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Type of the chat where the event happened. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -239,9 +242,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.context">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">context</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.context" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.context">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">context</span></span><em class="property"><span class="pre">:</span> <span class="pre">telegram.ext.callbackcontext.CallbackContext</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.context" title="Permalink to this definition">¶</a></dt>
 <dd><p>Context generated by some event</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -250,9 +253,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.forward_from_chat_id">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">forward_from_chat_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.forward_from_chat_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.forward_from_chat_id">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">forward_from_chat_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.forward_from_chat_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Id of the original chat the message has been forwarded from. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -261,9 +264,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.forward_from_id">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">forward_from_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.forward_from_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.forward_from_id">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">forward_from_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.forward_from_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Id of the original message that has been forwarded. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -273,8 +276,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.from_callback">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_callback</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.update.Update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_callback" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.from_callback">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.update.Update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_callback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Istance of EventInfo created by a callback update</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -293,8 +296,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.from_job">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_job</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_job" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.from_job">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_job" title="Permalink to this definition">¶</a></dt>
 <dd><p>Istance of EventInfo created by a job update</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -310,8 +313,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.from_message">
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.update.Update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_message" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.from_message">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.update.Update</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">telegram.ext.callbackcontext.CallbackContext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.from_message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Istance of EventInfo created by a message update</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -329,9 +332,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.is_private_chat">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_private_chat</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.is_private_chat" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.is_private_chat">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_private_chat</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.is_private_chat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether the chat is private or not</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -340,9 +343,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.is_valid_message_type">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_valid_message_type</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.is_valid_message_type" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.is_valid_message_type">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">is_valid_message_type</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.is_valid_message_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Whether or not the type of the message is supported</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -351,9 +354,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.message">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">message</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.message" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.message">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="pre">:</span> <span class="pre">telegram.message.Message</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.message" title="Permalink to this definition">¶</a></dt>
 <dd><p>Message that caused the update. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -362,9 +365,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.message_id">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">message_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.message_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.message_id">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">message_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.message_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Id of the message that caused the update. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -373,9 +376,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.query_data">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">query_data</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.query_data" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.query_data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">query_data</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.query_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Data associated with the query that caused the update. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -384,9 +387,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.query_id">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">query_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.query_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.query_id">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">query_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.query_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Id of the query that caused the update. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -395,9 +398,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.reply_markup">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">reply_markup</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.reply_markup" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.reply_markup">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">reply_markup</span></span><em class="property"><span class="pre">:</span> <span class="pre">telegram.replymarkup.ReplyMarkup</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.reply_markup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reply_markup of the message that caused the update. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -407,8 +410,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.send_post_to_admins">
-<code class="sig-name descname"><span class="pre">send_post_to_admins</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.send_post_to_admins" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.send_post_to_admins">
+<span class="sig-name descname"><span class="pre">send_post_to_admins</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.send_post_to_admins" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sends the post to the admin group, so it can be approved</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -421,20 +424,20 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.send_post_to_channel">
-<code class="sig-name descname"><span class="pre">send_post_to_channel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.send_post_to_channel" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.send_post_to_channel">
+<span class="sig-name descname"><span class="pre">send_post_to_channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.send_post_to_channel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sends the post to  the channel, so it can be ejoyed by the users (and voted, if comments are disabled)</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.send_post_to_channel_group">
-<code class="sig-name descname"><span class="pre">send_post_to_channel_group</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.send_post_to_channel_group" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.send_post_to_channel_group">
+<span class="sig-name descname"><span class="pre">send_post_to_channel_group</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.send_post_to_channel_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sends the post to the group associated to the channel, so that users can vote the post (if comments are enabled)</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.text">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">text</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.text" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.text">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">text</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.text" title="Permalink to this definition">¶</a></dt>
 <dd><p>Text of the message that caused the update. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -443,9 +446,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.update">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">update</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.update" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.update">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">update</span></span><em class="property"><span class="pre">:</span> <span class="pre">telegram.update.Update</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update generated by some event. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -454,9 +457,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.user_data">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_data</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_data" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.user_data">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">user_data</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Data related to the user. Is not persistent between restarts</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -465,9 +468,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.user_id">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_id</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.user_id">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">user_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Id of the user that caused the update. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -476,9 +479,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.user_name">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_name</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_name" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.user_name">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">user_name</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Name of the user that caused the update. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -487,9 +490,9 @@
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="modules.utils.info_util.EventInfo.user_username">
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_username</span></code><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_username" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.user_username">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">user_username</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.user_username" title="Permalink to this definition">¶</a></dt>
 <dd><p>Username of the user that caused the update. Defaults to None</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -506,8 +509,8 @@
 <p>Creates the inlinekeyboard sent by the bot in its messages.
 Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
 <dl class="py function">
-<dt id="modules.utils.keyboard_util.get_approve_kb">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></code><code class="sig-name descname"><span class="pre">get_approve_kb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_approve_kb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.keyboard_util.get_approve_kb">
+<span class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></span><span class="sig-name descname"><span class="pre">get_approve_kb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_approve_kb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the InlineKeyboard for the pending post</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -520,8 +523,8 @@ Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="modules.utils.keyboard_util.get_confirm_kb">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></code><code class="sig-name descname"><span class="pre">get_confirm_kb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_confirm_kb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.keyboard_util.get_confirm_kb">
+<span class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></span><span class="sig-name descname"><span class="pre">get_confirm_kb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_confirm_kb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the InlineKeyboard to confirm the creation of the post</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -534,8 +537,8 @@ Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="modules.utils.keyboard_util.get_settings_kb">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></code><code class="sig-name descname"><span class="pre">get_settings_kb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_settings_kb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.keyboard_util.get_settings_kb">
+<span class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></span><span class="sig-name descname"><span class="pre">get_settings_kb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_settings_kb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the InlineKeyboard to edit the settings</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -548,8 +551,8 @@ Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="modules.utils.keyboard_util.get_stats_kb">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></code><code class="sig-name descname"><span class="pre">get_stats_kb</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_stats_kb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.keyboard_util.get_stats_kb">
+<span class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></span><span class="sig-name descname"><span class="pre">get_stats_kb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_stats_kb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the InlineKeyboard for the stats menu</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -562,8 +565,8 @@ Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="modules.utils.keyboard_util.get_vote_kb">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></code><code class="sig-name descname"><span class="pre">get_vote_kb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">published_post</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modules.data.html#modules.data.published_post.PublishedPost" title="modules.data.published_post.PublishedPost"><span class="pre">modules.data.published_post.PublishedPost</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_vote_kb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.keyboard_util.get_vote_kb">
+<span class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></span><span class="sig-name descname"><span class="pre">get_vote_kb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">published_post</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="modules.data.html#modules.data.published_post.PublishedPost" title="modules.data.published_post.PublishedPost"><span class="pre">modules.data.published_post.PublishedPost</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.get_vote_kb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the InlineKeyboard for the published post and updates the correct number of reactions</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -579,8 +582,8 @@ Callback_data format: &lt;callback_family&gt;_&lt;callback_name&gt;,[arg]</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="modules.utils.keyboard_util.update_approve_kb">
-<code class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></code><code class="sig-name descname"><span class="pre">update_approve_kb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.inline.inlinekeyboardbutton.InlineKeyboardButton</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pending_post</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="modules.data.html#modules.data.pending_post.PendingPost" title="modules.data.pending_post.PendingPost"><span class="pre">modules.data.pending_post.PendingPost</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">approve</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reject</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.update_approve_kb" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="modules.utils.keyboard_util.update_approve_kb">
+<span class="sig-prename descclassname"><span class="pre">modules.utils.keyboard_util.</span></span><span class="sig-name descname"><span class="pre">update_approve_kb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.inline.inlinekeyboardbutton.InlineKeyboardButton</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pending_post</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="modules.data.html#modules.data.pending_post.PendingPost" title="modules.data.pending_post.PendingPost"><span class="pre">modules.data.pending_post.PendingPost</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">approve</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reject</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><a class="headerlink" href="#modules.utils.keyboard_util.update_approve_kb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the InlineKeyboard when the valutation of a pending post changes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
