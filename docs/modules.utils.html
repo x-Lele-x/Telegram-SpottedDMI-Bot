@@ -253,6 +253,21 @@
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.edit_inline_keyboard">
+<span class="sig-name descname"><span class="pre">edit_inline_keyboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chat_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_keyboard</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">telegram.inline.inlinekeyboardmarkup.InlineKeyboardMarkup</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.utils.info_util.EventInfo.edit_inline_keyboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic wrapper used to edit the inline keyboard of a message with the telegram bot, while also handling the exception</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chat_id</strong> (<em>int</em><em>, </em><em>optional</em>) – id of the chat the message to edit belongs to. It is the current chat if left None. Defaults to None.</p></li>
+<li><p><strong>message_id</strong> (<em>int</em><em>, </em><em>optional</em>) – id of the message to edit. It is the current message if left None. Defaults to None.</p></li>
+<li><p><strong>new_keyboard</strong> (<em>InlineKeyboardMarkup</em><em>, </em><em>optional</em>) – new inline keyboard to assign to the message. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="modules.utils.info_util.EventInfo.forward_from_chat_id">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">forward_from_chat_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#modules.utils.info_util.EventInfo.forward_from_chat_id" title="Permalink to this definition">¶</a></dt>
